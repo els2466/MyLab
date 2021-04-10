@@ -23,6 +23,7 @@ pipeline{
             }
         }
 
+
         // Stage3 : Publish the artifacts to Nexus
         stage ('Publish to Nexus'){
             steps {
