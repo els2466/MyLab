@@ -6,7 +6,7 @@ pipeline{
     }
 
     environment{
-       ArtifactId = readMavenPom().getArtifactId()
+//       ArtifactId = readMavenPom().getArtifactId()
        Version = readMavenPom().getVersion()
        Name = readMavenPom().getName()
     }
@@ -56,13 +56,13 @@ pipeline{
 
         // Stage 4 : Print some information
         stage ('Print Environment variables'){
-                    steps {
-                        echo "Artifact ID is '${ArtifactId}'"
-                        echo "Version is '${Version}'"
-                        echo "GroupID is '{}'"
-                        echo "Name is '${Name}'"
-                    }
-                }
+            steps {
+//                echo "Artifact ID is '${ArtifactId}'"
+                echo "Version is '${Version}'"
+                echo "GroupID is '{}'"
+                echo "Name is '${Name}'"
+            }
+        }
 
         // Stage 5 : Deploying the build artifact to Apache Tomcat
         stage ('Deploy to Tomcat'){
