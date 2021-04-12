@@ -34,7 +34,7 @@ pipeline{
                 nexusArtifactUploader artifacts:
                 [[artifactId: 'EdDevOpsLab',
                   classifier: '',
-                  file: 'target/EdDevOpsLab-0.0.4-RELEASE.war',
+                  file: 'target/EdDevOpsLab-0.0.4.war',
                   type: 'war']],
                 credentialsId: '165739c5-9d00-4929-a22e-317f38338c1e',
                 groupId: 'com.eddevopslab',
@@ -42,7 +42,7 @@ pipeline{
                 nexusVersion: 'nexus3',
                 protocol: 'http',
                 repository: 'EdDevOpsLab-RELEASE',
-                version: '0.0.4-RELEASE'
+                version: '0.0.4'
             }
         }
 
