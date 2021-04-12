@@ -4,11 +4,11 @@ pipeline{
     tools {
         maven 'maven'
     }
-    environment {
-        ArtifactId = readMavenPom().getArtifactId()
-        Version = readMavenPom().getVersion()
-        Name = readMavenPom().getName()
-    }
+    // environment {
+    //     ArtifactId = readMavenPom().getArtifactId()
+    //     Version = readMavenPom().getVersion()
+    //     Name = readMavenPom().getName()
+    // }
 
     stages {
         // Specify various stage with in stages
@@ -34,15 +34,15 @@ pipeline{
                 nexusArtifactUploader artifacts:
                 [[artifactId: 'EdDevOpsLab',
                   classifier: '',
-                  file: 'target/EdDevOpsLab-0.0.4-SNAPSHOT.war',
+                  file: 'target/EdDevOpsLab-0.0.4-RELEASE.war',
                   type: 'war']],
                 credentialsId: '165739c5-9d00-4929-a22e-317f38338c1e',
                 groupId: 'com.eddevopslab',
                 nexusUrl: '172.20.10.88:8081',
                 nexusVersion: 'nexus3',
                 protocol: 'http',
-                repository: 'EdDevOpsLab-SNAPSHOT',
-                version: '0.0.4-SNAPSHOT'
+                repository: 'EdDevOpsLab-RELEASE',
+                version: '0.0.4-RELEASE'
             }
         }
 
